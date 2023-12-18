@@ -1,0 +1,49 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.site-header {
+
+    padding-top: 10rem;
+    .logo {
+        min-width: 20rem;
+        width: 50%;
+        margin: 0 auto;
+        @include m.tablet {
+            max-width: 30rem;
+            margin: 0;
+        }
+    }
+    .contenido-header {
+        padding: 10rem 0;
+        
+        @include m.desktop {
+            padding: 15rem 0;
+        }
+        h1 {
+            color: v.$blanco;
+            font-size: 4.5rem;
+            max-width: 97%;
+            @include m.telefono {
+                max-width: 88%;
+            }
+            @include m.tablet {
+                max-width: 63%;
+                font-size: 6rem;
+            }
+            @include m.desktop {
+                max-width: 48%;
+            }
+        }
+    }
+
+}
+
+.notwebp.notavif .site-header {
+    @include m.bgImage('../img/header.jpg', v.$secundarioOpacity);
+}
+.webp .site-header {
+    @include m.bgImage('../img/header.webp', v.$secundarioOpacity);
+}
+.avif .site-header {
+    @include m.bgImage('../img/header.avif', v.$secundarioOpacity);
+}
